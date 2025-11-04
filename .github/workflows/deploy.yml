@@ -17,7 +17,7 @@ jobs:
       REDIS_URI: "redis-13407.c80.us-east-1-2.ec2.redns.redis-cloud.com:13407"
       REDIS_PASSWORD: "cQ6lNU5D50kZ0evlJATL7IMZcq1lsGoV"
       BOT_TOKEN: "8502761728:AAGUZGojG3_OTi2RXdoYLS1YOyKkCXsTLc4"
-      LOG_CHANNEL: -5001738787
+      LOG_CHANNEL: -1003162680748
 
     steps:
       - name: Checkout repository

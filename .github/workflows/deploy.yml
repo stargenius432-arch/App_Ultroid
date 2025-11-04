@@ -11,13 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      API_ID: "22057635"
-      API_HASH: "d4624448590cf3e702849f9d4e25f2b"
+      API_ID: 22057635
+      API_HASH: d4624448590cf3e702849f9d4e25f2b
       SESSION: 1BVtsOIgBu4IokOT-a6Fecy_yg8s0XiGyZC_l0oxfdr4tYa7Yrd8EZyJ0Zj5gSO8graXwUaVCZz8RYztwsZNppw2PAHJyvPdzPeF4uBZzZG1yPXj8HcUpTshhkkzulnvQ7h78Z6aHdTcJN24JNYhdoAmE90JAOusSBpTPm8-BPJOdQI_bhr_n8jwq-UgrlDgLm-qFfx18gZrtELFMnVL4uUkKoLtqT9_WhdkTBTrR58Eg-AHM1PWjXK75JNDidqsxN_WcqcK7mqlI6XCmW-4QOyxb5rDrryIkOMcEgiaShfP_I87CLqK4Ccl_u32dqIBA9jFDpzwcZ673i-RkY-a0V_Bo_YT_loc=
       REDIS_URI: "redis-13407.c80.us-east-1-2.ec2.redns.redis-cloud.com:13407"
       REDIS_PASSWORD: "cQ6lNU5D50kZ0evlJATL7IMZcq1lsGoV"
       BOT_TOKEN: "8502761728:AAGUZGojG3_OTi2RXdoYLS1YOyKkCXsTLc4"
-      LOG_CHANNEL: "-5001738787"
+      LOG_CHANNEL: -5001738787
 
     steps:
       - name: Checkout repository

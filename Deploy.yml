@@ -12,22 +12,23 @@ jobs:
 
     env:
       API_ID: 22057635
-      API_HASH: d4624448590c0f3e702849f9d4e25f2b
-      SESSION: 1BVtsOIUBu8CNYi7TsuUd0e6AgXOtSricUiu0t_j_o5MCQtyNJTNOLus35y0SLZxXWcNJfZ-TdK8t73nI36og8Gz89byVRw-pzPfMMm6DXQLh-eKEi2gwCG-Kmt6u2hTWOBgrV7FhFpdFVXXonMGaKetJVK9m0rvOVpI-2DlyV-bw_Vx_eq4ANCYG7g1bxr72SBSFOiBHO__shCSWh8C-ITKYajBhXLapX0totvSjqggiwNm4Ml1yFWzoVgJQp3JVUgLlHEimxW0bkzU2Pl22f8vlEHyq0z-pvVW08hcWv2HU4mKMdDZVBZvIJMhF9a_N5ZAmzr37FuCxflVBIooqZ5rGNQlsBco=
-      REDIS_URI: redis-13407.c80.us-east-1-2.ec2.redns.redis-cloud.com:13407
-      REDIS_PASSWORD: cQ6lNU5D50kZ0evlJATL7IMZcq1lsGoV
+      API_HASH: d4624448590cf3e702849f9d4e25f2b
+      SESSION: 1BVtsOIUBu8CNk7ItsuUdo6eAgXt5rciUiOt_j_oSMCQtyNJTNOLus35yOSLzXvWcNJFz-Tdk8T73nI36og8
+      REDIS_URI: redis-13407.c80.us-east-1-2.ec2.reds-cloud.com:13407
+      REDIS_PASSWORD: cQ6lNU5b50kZoew1JATL7IMZcq1lsGoV
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Install requirements
         run: |
+          pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run Ultroid

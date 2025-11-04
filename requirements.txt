@@ -1,26 +1,20 @@
-# Ultroid custom Telethon fork
-git+https://github.com/xditya/Telethon-patch.git
+# Telethon patch (via ZIP download)
+https://github.com/TeamUltroid/Telethon-patch/archive/refs/heads/main.zip
 
-# Core dependencies
+# Base dependencies
 telethon==1.34.0
 aiohttp
 requests
 python-dotenv
 cryptg
-
-# Database & caching
 redis
 motor
 dnspython
-
-# Logging and utilities
 pytz
 asyncio
 psutil
 dateparser
 GitPython
-
-# Misc / internal tools
 Pillow
 heroku3
 telegraph
@@ -36,6 +30,4 @@ youtube_dl
 ffmpeg-python
 aria2p
 python-rapidjson
-
-# Optional or Ultroid-specific
 telethon-tgcrypto

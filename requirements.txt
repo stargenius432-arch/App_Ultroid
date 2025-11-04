@@ -1,0 +1,6 @@
+telethon
+redis
+pyrogram
+aiohttp
+heroku3
+python-dotenv

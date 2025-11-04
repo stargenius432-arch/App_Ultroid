@@ -1,10 +1,10 @@
 name: Ultroid Deploy
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -16,8 +16,8 @@ jobs:
       SESSION: 1BVtsOIUBu8CNk7ItsuUdo6eAgXt5rciUiOt_j_oSMCQtyNJTNOLus35yOSLzXvWcNJFz-Tdk8T73nI36og8
       REDIS_URI: redis-13407.c80.us-east-1-2.ec2.reds-cloud.com:13407
       REDIS_PASSWORD: cQ6lNU5b50kZoew1JATL7IMZcq1lsGoV
-      LOG_CHANNEL: -5001738787
-      BOT_TOKEN: 8502761728:AAGUZGojG3_OTi2RXdoYLS1YOyKkCXsTLc4
+      LOG_CHANNEL: -5001783787
+      BOT_TOKEN: 8520671728:AAGUZgojg3_OTiR2khoYLS1YOgYkkCxsTLc
 
     steps:
       - name: Checkout repository
@@ -26,13 +26,13 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: '3.10'
 
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
+          pip install git+https://github.com/TeamUltroid/Telethon-patch
           pip install -r requirements.txt
-          pip install telethon telethon-patch redis aiohttp pytz
 
       - name: Run Ultroid
         run: |

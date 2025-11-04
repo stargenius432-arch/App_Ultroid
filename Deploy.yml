@@ -16,19 +16,21 @@ jobs:
       SESSION: 1BVtsOIUBu8CNk7ItsuUdo6eAgXt5rciUiOt_j_oSMCQtyNJTNOLus35yOSLzXvWcNJFz-Tdk8T73nI36og8
       REDIS_URI: redis-13407.c80.us-east-1-2.ec2.reds-cloud.com:13407
       REDIS_PASSWORD: cQ6lNU5b50kZoew1JATL7IMZcq1lsGoV
+      LOG_CHANNEL: -5001738787      # <-- अपना लॉग चैनल ID डालो (minus sign के साथ)
+      BOT_TOKEN: 8502761728:AAGUZGojG3_OTi2RXdoYLS1YOyKkCXsTLc4   # <-- अगर Bot Token है तो यहाँ डालो
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
-      - name: Install requirements
+      - name: Install dependencies
         run: |
-          pip install --upgrade pip
+          python3 -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run Ultroid

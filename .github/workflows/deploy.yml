@@ -2,32 +2,38 @@ name: Ultroid Deploy
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    env:
+      API_ID: 22057635
+      API_HASH: d4624448590cf3e702849f9d4e25f2b
+      SESSION: 1BVtsOIUBu8CNk7ItsuUdo6eAgXt5rciUiOt_j_oSMCQtyNJTNOLus35yOSLzXvWcNJFz-Tdk8T73nI36og8
+      REDIS_URI: redis-13407.c80.us-east-1-2.ec2.reds-cloud.com:13407
+      REDIS_PASSWORD: cQ6lNU5b50kZoew1JATL7IMZcq1lsGoV
+      LOG_CHANNEL: -5001738787
+      BOT_TOKEN: 8502761728:AAGUZGojG3_OTi2RXdoYLS1YOyKkCXsTLc4
+
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
 
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install telethon telethon-patch redis aiohttp pytz
 
-    - name: Run Ultroid
-      env:
-        API_ID: ${{ secrets.API_ID }}
-        API_HASH: ${{ secrets.API_HASH }}
-        SESSION: ${{ secrets.SESSION }}
-        REDIS_URI: ${{ secrets.REDIS_URI }}
-        REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
-        LOG_CHANNEL: ${{ secrets.LOG_CHANNEL }}
-        BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-      run: |
-        python3 -m pyUltroid
+      - name: Run Ultroid
+        run: |
+          python3 -m pyUltroid
